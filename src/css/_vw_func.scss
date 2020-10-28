@@ -6,10 +6,8 @@ $theme_bg_linear: linear-gradient(
   rgba(252, 86, 35, 1)
 );
 $theme_color_light: #fff2ed;
-
 // 练习模块主题色
 $ques_color: #fc5623;
-
 // 分割线1
 $border-color: #ededed;
 // 分割线2
@@ -35,13 +33,11 @@ $border-or-color: #e6e6e6;
   background: #F7F7F7;
   box-sizing: border-box;
 }
-
 // 主题色字体加淡色背景
 %theme-color-bg{
   color: $theme_color;
   background: #fff2ed;
 }
-
 // 伪高斯模糊
 %filter-effect {
   box-shadow: 0px 6px 12px 0px rgba(204, 204, 204, 0.5);
@@ -53,7 +49,6 @@ $border-or-color: #e6e6e6;
     1 1;
   background: rgba(255, 255, 255, 0.9);
 }
-
 // 上划线
 %border-t1 {
   &:after {
@@ -68,7 +63,6 @@ $border-or-color: #e6e6e6;
     background-color: $border-or-color;
   }
 }
-
 // 下划线
 %border-b1 {
   &::after {
@@ -83,7 +77,6 @@ $border-or-color: #e6e6e6;
     background-color: $border-or-color;
   }
 }
-
 @mixin border-b1($bg) {
   &::after {
     content: "";
@@ -97,20 +90,17 @@ $border-or-color: #e6e6e6;
     background-color: $bg;
   }
 }
-
 @mixin default-bg($bg) {
   min-height: 100vh;
   background: $bg;
   box-sizing: border-box;
 }
-
 // 字体缩放
 @mixin font-scale($font) {
   display: block;
   transform: scale($font/26);
   font-size: 26px;
 }
-
 // 单元格列表
 @mixin cell-list($showArrow: true) {
   ul {
@@ -156,7 +146,6 @@ $border-or-color: #e6e6e6;
     }
   }
 }
-
 @mixin eps {
   overflow: hidden;
   text-overflow: ellipsis;
