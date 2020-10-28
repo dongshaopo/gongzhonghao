@@ -1,0 +1,359 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v3.0 | 20180413
+   License: none (public domain)
+*/
+
+/* css reset */
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  font-family: "PingFangSC-Regular", "PingFang SC", "Noto Sans Han", "OPPO Sans", "小米兰亭pro","Helvetica Neue",Helvetica,Arial,"Microsoft Yahei","Hiragino Sans GB","Heiti SC","WenQuanYi Micro Hei",sans-serif;
+  vertical-align: baseline;
+  outline: none;
+}
+
+/* HTML5 display-role reset for older browsers */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section {
+  display: block;
+}
+
+/* HTML5 hidden-attribute fix for newer browsers */
+
+*[hidden] {
+  display: none;
+}
+
+body {
+  line-height: 1;
+  word-break: break-all;
+}
+
+.f-left {
+  float: left;
+}
+
+.f-right {
+  float: right;
+}
+
+.clear {
+  overflow: hidden;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* 公用样式 */
+
+.course-btn {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 88px;
+  line-height: 88px;
+  background: $theme_color;
+  text-align: center;
+  font-size: 34px;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+}
+
+.course-two-btn {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 88px;
+  line-height: 88px;
+  background: #fff;
+  text-align: center;
+  color: $theme_color;
+  display: flex;
+  button {
+    border: none;
+    height: 100%;
+    width: 50%;
+    font-size: 30px;
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
+    &:nth-child(2) {
+      background: $theme_color;
+      color: rgba(255, 255, 255, 1);
+    }
+  }
+}
+
+// Custom/Order
+.van-tabs-simple {
+  /deep/ {
+    .van-tabs__wrap {
+      border-bottom: none;
+    }
+    .van-tabs__line {
+      display: none;
+    }
+    .van-hairline--top-bottom::after {
+      display: none;
+    }
+    .van-tab--active {
+      font-weight: bold;
+    }
+  }
+}
+
+// http.js loading
+.toast-loading {
+  background: none;
+  span {
+    color: $theme_color !important;
+  }
+}
+
+/* Course/Assess/ErrorQues等filter样式 */
+.course-fitler {
+  height: 84px;
+  .van-dropdown-menu__bar{
+    height: 100%;
+  }
+  .course-sort {
+    background: #fff;
+    padding: 10px 0 40px 35px;
+    li {
+      height: 75px;
+      line-height: 75px;
+      font-size: 28px;
+      color: #333;
+    }
+    li.active {
+      color: $theme_color;
+    }
+  }
+}
+
+/*练习模块*/
+.question-box {
+  .van-radio__icon {
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .van-checkbox__icon {
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+.van-search__content--round {
+  border-radius: 48px;
+}
+
+.van-count-down {
+  font-size: 22px;
+}
+
+// 提示
+.check-msg {
+  .van-dialog__message {
+    font-size: 30px;
+    font-family: PingFangSC-Regular, PingFang SC;
+    font-weight: 400;
+    color: rgba(89, 89, 89, 1);
+    line-height: 48px;
+    padding: 40px 120px;
+  }
+  .van-button {
+    background: #fff;
+    color: $theme_color;
+  }
+}
+
+// 所有子元素垂直居中
+.vmiddle > * {
+  vertical-align: middle;
+}
+
+// svg
+svg,
+svg path {
+  fill: currentColor;
+}
+
+// 课程图书封面 border
+.cover {
+  border-radius: 5px;
+}
+
+// 反馈，退出登录，实名认证等按钮样式
+.common-submit {
+  overflow: hidden;
+  height: 200px;
+  .btn-exit {
+    background-color: $theme_color;
+    color: #fff;
+    height: 74px;
+    margin: 40px 30px;
+    border-radius: 37px;
+    font-size: 32px;
+    text-align: center;
+    line-height: 74px;
+  }
+}
+
+// iframe限制
+iframe {
+  max-width: 100% !important;
+}
+
+// 一个设计师一个dialog
+.dev-dialog {
+  /deep/ .van-dialog__header {
+    font-size: 34px;
+    color: rgba(26, 26, 26, 1);
+  }
+  /deep/ .van-button__text {
+    font-size: 30px;
+    font-weight: 400;
+  }
+  /deep/ .van-dialog__confirm {
+    background: #fff;
+    color: $theme_color;
+  }
+  .notice-content {
+    padding: 30px 40px 40px;
+    line-height: 60px;
+    font-size: 28px;
+    color: #666;
+    .icon-notice {
+      width: 36px;
+      height: 36px;
+      margin-right: 10px;
+      vertical-align: -6px;
+    }
+  }
+}
+.van-overlay {
+  background-color: rgba(0,0,0,.5);
+}
