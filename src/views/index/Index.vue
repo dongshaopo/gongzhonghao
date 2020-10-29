@@ -100,6 +100,12 @@
     		<span class="title">常见问题</span>
     		<span class="more">更多</span>
     	</ul>
+    	<ul class="common_problem">
+    		<li v-for="(item,index) in questionsList">
+    			<span class="icon"></span>
+    			<span class="name">{{item.name}}</span>
+    		</li>
+    	</ul>
    	</div>
   </div>
 </template>
@@ -108,6 +114,24 @@ export default {
   name: "Index",
   data() {
     return {
+    	questionsList:[
+    		{
+    			id:1,
+    			name:'低保或特困家庭采暖交费规定'
+    		},
+    		{
+    			id:2,
+    			name:'供热时间'
+    		},
+    		{
+    			id:3,
+    			name:'管网、冲水、打压时间'
+    		},
+    		{
+    			id:4,
+    			name:'申请报停的条件及时间'
+    		}
+    	],
     };
   },
   methods: {
