@@ -4,19 +4,19 @@
     <div class="index_top_bj">
     	<img class="bimg" src="~@/assets/images/banner3@2x.png">
 	    <div class="index_server_box">
-	    	<li @click="index_server(1)">
+	    	<li @click="index_server('account_number_query')">
 	    		<span class="img"><img src="~@/assets/images/hhcx@2x.png"></span>
 	    		<span class="text">户号查询</span>
 	    	</li>
-	    	<li @click="index_server(2)">
+	    	<li @click="index_server('heating_fee_query')">
 	    		<span class="img"><img src="~@/assets/images/cnfcx@2x.png"></span>
 	    		<span class="text">采暖费查询</span>
 	    	</li>
-	    	<li @click="index_server(3)">
+	    	<li @click="index_server('service_master')">
 	    		<span class="img"><img src="~@/assets/images/fwsf@2x.png"></span>
 	    		<span class="text">服务师傅</span>
 	    	</li>
-	    	<li @click="index_server(4)">
+	    	<li @click="index_server('electronic_invoice')">
 	    		<span class="img"><img src="~@/assets/images/dzfp@2x.png"></span>
 	    		<span class="text">电子发票</span>
 	    	</li>
@@ -24,77 +24,54 @@
     </div>
     <!-- 轮播 -->
     <div class="index_banner">
-        <van-swipe :autoplay="false">
-          <van-swipe-item :key="0">
+        <van-swipe :autoplay="0">
+          <van-swipe-item key="0">
             <ul class="index_kinds">
-		        <li :key="0" @click="bannerClick(0)">
+		        <li @click="index_server('self-service_repair')">
 		          <img class="bimg" src="~@/assets/images/zzbx@2x.png">
 		          <font>自助报修</font>
 		        </li>
-		        <li :key="1" @click="bannerClick(1)">
+		        <li @click="index_server('repair_record')">
 		          <img class="bimg" src="~@/assets/images/wxjl@2x.png">
 		          <font>维修记录</font>
 		        </li>
-		        <li :key="2" @click="bannerClick(2)">
+		        <li @click="index_server('application_for_suspension')">
 		          <img class="bimg" src="~@/assets/images/zxbtsq@2x.png">
 		          <font>在线报停<br>申请</font>
 		        </li>
-		        <li :key="3" @click="bannerClick(3)">
+		        <li @click="index_server('recovery_heat')">
 		          <img class="bimg" src="~@/assets/images/hfyrsq@2x.png">
 		          <font>恢复用热<br>申请</font>
 		        </li>
-		        <li :key="4" @click="bannerClick(4)">
+		        <li @click="index_server('community_report')">
 		          <img class="bimg" src="~@/assets/images/xqbzsq@2x.png">
 		          <font>既有小区<br>报装申请</font>
 		        </li>
-		        <li :key="5" @click="bannerClick(5)">
+		        <li @click="index_server('name_change')">
 		          <img class="bimg" src="~@/assets/images/ghgmsq@2x.png">
 		          <font>过户更名 <br>申请</font>
 		        </li>
-		        <li :key="5" @click="bannerClick(6)">
+		        <li @click="index_server('heating_area_modification')">
 		          <img class="bimg" src="~@/assets/images/grmjxgsq@2x.png">
 		          <font>供热面积<br>修改申请</font>
 		        </li>
-		        <li :key="7" @click="bannerClick(7)">
+		        <li @click="bannerClick('sign_a_contract')">
 		          <img class="bimg" src="~@/assets/images/htqd@2x.png">
 		          <font>合同签订</font>
 		        </li>
 		      </ul>
           </van-swipe-item>
-          <van-swipe-item :key="1">
+          <van-swipe-item key="12">
            <ul class="index_kinds">
-		        <li :key="8" @click="bannerClick(8)">
+		        <li @click="bannerClick('suggestions')">
 		          <img class="bimg" src="~@/assets/images/htqd@2x.png">
-		          <font>投诉</font>
+		          <font>投诉建议</font>
 		        </li>
 		      </ul>
           </van-swipe-item>
         </van-swipe>
     </div>
-    <div class="serverInfo">
-    	<ul class="ul_more">
-    		<span class="title">服务信息</span>
-    		<span class="more">更多</span>
-    	</ul>
-    	<ul class="serverInfo_box">
-	        <li :key="1" @click="serverInfo(1)">
-	          <img class="bimg" src="~@/assets/images/fwwd@2x.png">
-	          <font>服务网点</font>
-	        </li>
-	        <li :key="2" @click="serverInfo(2)">
-	          <img class="bimg" src="~@/assets/images/fybz@2x.png">
-	          <font>费用标准</font>
-	        </li>
-	        <li :key="3" @click="serverInfo(3)">
-	          <img class="bimg" src="~@/assets/images/flzc@2x.png">
-	          <font>法律政策</font>
-	        </li>
-	        <li :key="4" @click="serverInfo(4)">
-	          <img class="bimg" src="~@/assets/images/jfzn@2x.png">
-	          <font>交费指南</font>
-	        </li>
-	      </ul>
-    </div>
+    <ServerInfo :min_title="1"></ServerInfo>
     <div class="serverInfo">
     	<ul class="ul_more">
     		<span class="title">常见问题</span>
@@ -102,18 +79,52 @@
     	</ul>
     	<ul class="common_problem">
     		<li v-for="(item,index) in questionsList">
-    			<span class="icon"></span>
+    			<img src="~@/assets/images/faq@2x.png" class="icon">
     			<span class="name">{{item.name}}</span>
     		</li>
     	</ul>
    	</div>
+   	<div class="ededed_footer">
+   		<span>客服热线：</span>
+   		<span class="blue">0632-8112345</span>
+   	</div>
+   	<van-popup v-model="showPopup" position="bottom">
+   			<van-picker
+   				title="请选择绑定热地址"
+          :columns="columns"
+          :default-index="attrsSelect"
+          show-toolbar
+          @cancel="showPopup = false"
+          @confirm="onConfirmAttrs"
+        />
+        
+   	</van-popup>
   </div>
 </template>
 <script>
+import ServerInfo from "@/components/serverInfo";
 export default {
   name: "Index",
+  components: {
+    ServerInfo
+  },
   data() {
     return {
+    	columns: [
+        {text: '某某城市1号',id:1},
+        {text: '某某城市2号',id:2},
+        {text: '某某城市3号',id:3},
+        {text: '某某城市4号',id:4},
+        {text: '某某城市5号',id:5},
+        {text: '某某城市6号',id:6},
+        {text: '某某城市7号',id:7},
+        {text: '某某城市8号',id:8},
+      ],
+    	attrsColums:[],
+    	attrsSelect:-1,
+    	labelType:'',
+    	showPopup:false,
+    	autoFalse:0,
     	questionsList:[
     		{
     			id:1,
@@ -135,14 +146,20 @@ export default {
     };
   },
   methods: {
-  	index_server(){
-  		
+  	onConfirmAttrs(value,index){//确认
+  		this.showPopup = false;
+      console.log(value);
+      console.log(index);
+      this.bannerClick(this.labelType);
   	},
-    bannerClick(index){
-    	
-    },
-    serverInfo(index){
-    	
+  	index_server(type){
+  		this.labelType=type;
+  		this.showPopup=true;
+  	},
+    bannerClick(item){
+    	this.$router.push({
+	      name: item,
+	    });
     },
   },
   created() {
@@ -155,6 +172,7 @@ export default {
  font-size:20px;
  padding-bottom:120px;
  width:100%; float: left;
+ /deep/ .van-picker__title{font-size:30px; height:70px; line-height:70px;}
 }
 .index_top_bj{width:100%; float:left; position:relative; z-index:1;}
 .index_top_bj .bimg{width:100%; height:auto; float:left;}
@@ -210,7 +228,7 @@ export default {
 .index_banner{
 /deep/ .van-swipe__indicators{
 	bottom:0px;
-	.van-swipe__indicator{background:#ccc; width:20px;}
+	.van-swipe__indicator{background:#ccc; width:20px; height:5px; border-radius:5px;}
 	.van-swipe__indicator--active{background:#FF2411;}
 }
 }
@@ -235,25 +253,31 @@ export default {
 		line-height: 42px; float: right; padding-right:30px;
 		}
 	}
-	.serverInfo_box{width:100%; float:left; padding-bottom:40px;}
-	li{
-		width:50%;
+	.common_problem{width:100%; float:left;
+	li{width:100%; float:left; position:relative; padding:20px 30px; box-sizing: border-box; display:flex;}
+	li:before{content:''; position:absolute; top:29px; right:30px; width:15px; height:26px; background:url(../../assets/images/jt_xq@2x.png) no-repeat; background-size:15px 26px;}
+	.icon{width:40px; height:40px; float:left; margin-top:1px;}
+	.name{
+		@include lines-eps(1);
+		flex: 1;
+		padding-left:20px;
 		float:left;
-		margin-top:30px;
-		img{width:84px; height:84px; float: left; margin-left:80px; margin-right:20px;}
-		font{
-		float:left;
-		margin-top:22px;
-		height: 42px;
-		font-size: 30px;
+		height:42px;
+		font-size: 28px;
 		font-family: Source Han Sans CN;
 		font-weight: 400;
-		color: #333333;
+		color: #7D7D7D;
 		line-height: 42px;
-		}
+		padding-right:35px;
 	}
-	li:nth-child(2n){
-		img{margin-left:0px;}
 	}
+}
+.ededed_footer{background:#ededed; width:100%; float:left; text-align: center;
+	height:100px;
+	font-size: 28px;
+	font-family: Source Han Sans CN;
+	font-weight: 400;
+	line-height: 100px;
+	.blue{color:#0471ED;}
 }
 </style>

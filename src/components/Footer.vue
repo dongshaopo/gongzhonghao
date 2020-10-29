@@ -110,7 +110,7 @@ export default {
     let data = {
         "index":[
             {
-                "name":"首页",
+                "name":"服务大厅",
                 "url":"Index",
                 "nav_img":this.nav_icon[0].src,
                 "nav_img_checked":this.nav_icon[1].src,
