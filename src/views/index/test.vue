@@ -3,6 +3,7 @@
   <div class="text">
     <headers class="headers" :title="{ name: '提交成功' }":goBackHandler="goBack"></headers>
     ffffffffffffff
+    <div @click="$router.push({name:'test',})">fdsfd</div>
   </div>
 </template>
 <script>

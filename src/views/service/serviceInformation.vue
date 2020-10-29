@@ -2,6 +2,7 @@
 <template>
   <div class="serviceInformation">
     aaaaaaaaaaa
+    <div class="index_top_bj"><img src="~@/assets/images/banner3@2x.png"></div>
   </div>
 </template>
 <script>

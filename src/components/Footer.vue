@@ -14,8 +14,6 @@
         <font v-if="foot_style" :class="{ 'hover-font': $route.name == item.url }">{{ item.name }}</font>
       </li>
     </ul>
-    {{footerShow}}
-    {{app}}
   </footer>
 </template>
 <script>
@@ -28,7 +26,15 @@ export default {
       foot_style: 1,
       footerShow: 1,
       nav_list: [],
-      is_phx: false
+      is_phx: false,
+      nav_icon:[
+      	{src:require('../assets/images/fwdt@2x.png')},
+      	{src:require('../assets/images/fwdt_a@2x.png')},
+      	{src:require('../assets/images/fwxx@2x.png')},
+      	{src:require('../assets/images/fwxx_a@2x.png')},
+      	{src:require('../assets/images/wd@2x.png')},
+      	{src:require('../assets/images/wd_a@2x.png')},
+      ]
     };
   },
   computed: {
@@ -106,8 +112,8 @@ export default {
             {
                 "name":"首页",
                 "url":"Index",
-                "nav_img":"https://testwx.baijiayun.com/statics/nav/index_3x.png",
-                "nav_img_checked":"https://testwx.baijiayun.com/statics/nav/index_checked_3x.png",
+                "nav_img":this.nav_icon[0].src,
+                "nav_img_checked":this.nav_icon[1].src,
                 "is_outer":0,
                 "sort":1,
                 "status":1,
@@ -116,8 +122,8 @@ export default {
             {
                 "name":"服务信息",
                 "url":"serviceInformation",
-                "nav_img":"https://testwx.baijiayun.com/statics/nav/person_3x.png",
-                "nav_img_checked":"https://testwx.baijiayun.com/statics/nav/person_checked_3x.png",
+                "nav_img":this.nav_icon[2].src,
+                "nav_img_checked":this.nav_icon[3].src,
                 "is_outer":0,
                 "sort":2,
                 "status":1,
@@ -126,8 +132,8 @@ export default {
             {
                 "name":"我的",
                 "url":"personIndex",
-                "nav_img":"https://testwx.baijiayun.com/statics/nav/person_3x.png",
-                "nav_img_checked":"https://testwx.baijiayun.com/statics/nav/person_checked_3x.png",
+                "nav_img":this.nav_icon[4].src,
+                "nav_img_checked":this.nav_icon[5].src,
                 "is_outer":0,
                 "sort":2,
                 "status":1,
@@ -210,10 +216,10 @@ footer {
         font-size: 22px;
         font-family: PingFangSC-Regular;
         font-weight: 400;
-        color: #b6b4be;
+        color: #C5C5C5;
       }
       .hover-font {
-        color: $theme_color;
+        color:$theme_color;
       }
     }
   }
