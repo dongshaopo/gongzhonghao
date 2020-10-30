@@ -10,8 +10,10 @@
       <router-view v-if="isRouterAlive" />
     </keep-alive>
     <app-footer />
-    <BottomNavigation @change="onBottomNavChange"></BottomNavigation>
-  </div>
+    <!--
+    	<BottomNavigation @change="onBottomNavChange"></BottomNavigation>
+    -->
+    </div>
 </template>
 <script>
 import appFooter from "./components/Footer";
