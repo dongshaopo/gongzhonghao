@@ -31,12 +31,11 @@
     		<p class="zd_name">请依次上传您的身份证(正/反)、房产证照片</p>
     	</div>
     	<div class="photo">
-          <input
-          	 class="img_but"
-            type="file"
-            accept="image/*"
-            @change="onChangeAvatar"
-          />
+          <van-uploader v-model="fileList" :max-count="2" :upload-icon="img_jia" :after-read="onChangeAvatar">
+				  <template #preview-cover="{file}">
+				    <div class="preview-cover van-ellipsis">{{file.name}}</div>
+				  </template>
+				  </van-uploader>
     	</div>
     	<div class="button_submit" @click="submit_ok">提交申请</div>
     </div>
@@ -47,6 +46,8 @@ export default {
   name: "name_change",
   data() {
     return {
+    	img_jia:require('../../assets/images/jia.jpg'),
+    fileList:[],
       testVal_01:'',
       testVal_02:'',
     };
@@ -65,9 +66,9 @@ export default {
       })
   	},
     onChangeAvatar(e) {
-      const formdata = new FormData()
-      formdata.append('file', e.target.files[0])
-      this.$http.post('/api/app/public/img', formdata).then(data => {
+      console.log(e.content);
+    	return false;
+      this.$http.post('/api/app/public/img',e.content).then(data => {
         console.log(data.path);
       })
     },
@@ -85,41 +86,6 @@ export default {
 	z-index:1;
  .ad_img{width:100%; float:left;
  	img{width:100%; height:auto; float:left;}
- }
- .user_info{border-top:15px solid #ededed; width:100%; float:left; background:#fff;
- .photo{width:100%; float: left;}
- .img_but{width:80px; height:80px; margin:0px 0px 30px 30px; background:url(../../assets/images/jia.jpg) no-repeat; background-size:80px 80px; overflow: hidden;
- line-height:500px; float: left;}
- .list_text{
- 	width:calc(100% - 60px);
- 		float:left;
- 		margin-left:30px;
- 		margin-right:30px;
-		background:#F8F8F8;;
-		textarea{margin: 0px; padding:0px; border:0px; outline:none; background:none; color:#333; font-size:28px; width:100%; height:150px; padding:10px; box-sizing: border-box; resize:none; border-radius:10px;}
- }
- 	.list{
- 		width:100%; float:left; border-bottom:1px solid #f8f8f8; display:flex;
- 		.zd_name{height:88px; line-height:88px; float: left; padding-left:30px; font-size: 30px;font-family: Source Han Sans CN;font-weight: 400;}
- 		.zd_desc{flex:1; height:88px; line-height:88px; text-align: right; padding-right:30px; font-size: 30px;font-family: Source Han Sans CN;font-weight: 400; outline:none; border:0px;}
- 		.zd_descd{flex:1; height:88px; line-height:88px; text-align: right; padding-right:80px; font-size: 30px;font-family: Source Han Sans CN;font-weight: 400; outline:none; border:0px; position: relative;}
- 		.zd_descd:before{content:''; width:24px; height:14px; position:absolute; top:35px; right:30px; background:url(../../assets/images/down124_14.png) no-repeat; background-size:24px 14px;}
- 	}
- 	.button_submit{
- 		width:100%;
- 		position:fixed;
- 		z-index:2;
- 		left:0px;
- 		bottom:50px;
- 		line-height:82px;
- 		text-align: center;
-		height: 82px;
-		background: linear-gradient(0deg, #FF6D00, #FF6D00, #FF8901);
-		font-size: 28px;
-		font-family: Source Han Sans CN;
-		font-weight: 400;
-		color: #fff;
- 	}
  }
 }
 </style>
