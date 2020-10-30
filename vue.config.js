@@ -8,6 +8,7 @@ module.exports = {
     }
   },
   productionSourceMap: false,
+  publicPath: process.env.BUILD_ENV == 'dev' ? '/' : 'heating',
   chainWebpack: config => {
     config.module
       .rule('vue')

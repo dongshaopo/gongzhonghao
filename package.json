@@ -4,9 +4,10 @@
     "private": true,
     "scripts": {
         "serve": "cross-env BUILD_ENV=dev vue-cli-service serve",
-        "buildDev": "cross-env BUILD_ENV=dev vue-cli-service build",
-        "buildProd": "cross-env BUILD_ENV=prod vue-cli-service build",
-        "buildTest": "cross-env BUILD_ENV=test vue-cli-service build",
+		"buildDev": "cross-env BUILD_ENV=dev BASE_URL=heating vue-cli-service build",
+        "buildProd": "cross-env BUILD_ENV=prod BASE_URL=heating vue-cli-service build",
+        "buildTest": "cross-env BUILD_ENV=test BASE_URL=heating vue-cli-service build",
+		
         "lint": "vue-cli-service lint",
         "start": "npm run serve"
     },
