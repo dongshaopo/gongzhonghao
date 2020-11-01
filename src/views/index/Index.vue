@@ -43,7 +43,7 @@
 		          <img class="bimg" src="~@/assets/images/hfyrsq@2x.png">
 		          <font>恢复用热<br>申请</font>
 		        </li>
-		        <li @click="index_server('community_report')">
+		        <li @click="bannerClick('community_report')">
 		          <img class="bimg" src="~@/assets/images/xqbzsq@2x.png">
 		          <font>既有小区<br>报装申请</font>
 		        </li>
