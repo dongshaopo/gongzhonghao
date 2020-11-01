@@ -23,11 +23,17 @@
     		<p class="zd_name">请上传手持身份证、房产证照片</p>
     	</div>
     	<div class="photo">
-          <van-uploader v-model="fileList" :max-count="2" :upload-icon="img_jia" :after-read="onChangeAvatar">
-				  <template #preview-cover="{file}">
-				    <div class="preview-cover van-ellipsis">{{file.name}}</div>
-				  </template>
-				  </van-uploader>
+
+        <van-uploader class="update_d" v-model="fileListd" :max-count="1" :upload-icon="img_jia" :after-read="onChangeAvatar">
+          <template #preview-cover="{file}">
+            <div class="preview-cover van-ellipsis">{{file.name}}</div>
+          </template>
+        </van-uploader>
+        <van-uploader class="update_c" v-model="fileListc" :max-count="1" :upload-icon="img_jia" :after-read="onChangeAvatar">
+          <template #preview-cover="{file}">
+            <div class="preview-cover van-ellipsis">{{file.name}}</div>
+          </template>
+        </van-uploader>
     	</div>
     	<div class="button_submit" @click="submit_ok">提交申请</div>
     </div>
@@ -39,7 +45,8 @@ export default {
   data() {
     return {
     	img_jia:require('../../assets/images/jia.jpg'),
-    fileList:[],
+      fileListc:[],
+      fileListd:[],
      message:''
     };
   },

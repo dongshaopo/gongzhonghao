@@ -27,10 +27,7 @@
     		<p class="zd_name">银行账号</p>
     		<input class="zd_desc" placeholder="请输入银行账号"></input>
     	</div>
-    	<div class="list">
-    		<p class="zd_name">单位地址</p>
-    		<input class="zd_desc" placeholder="请输入单位地址"></input>
-    	</div>
+
     	<div class="list">
     		<p class="zd_name">缴费金额</p>
     		<p class="zd_desc">2568.8元</p>

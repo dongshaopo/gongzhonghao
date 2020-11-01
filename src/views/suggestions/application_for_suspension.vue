@@ -23,11 +23,16 @@
     		<p class="zd_name">请上传您的身份证（正反面）照片</p>
     	</div>
     	<div class="photo">
-          <van-uploader v-model="fileList" :max-count="2" :upload-icon="img_jia" :after-read="onChangeAvatar">
-				  <template #preview-cover="{file}">
-				    <div class="preview-cover van-ellipsis">{{file.name}}</div>
-				  </template>
-				  </van-uploader>
+        <van-uploader class="update_a" v-model="fileLista" :max-count="1" :upload-icon="img_jia" :after-read="onChangeAvatar">
+          <template #preview-cover="{file}">
+            <div class="preview-cover van-ellipsis">{{file.name}}</div>
+          </template>
+        </van-uploader>
+        <van-uploader class="update_b" v-model="fileListb" :max-count="1" :upload-icon="img_jia" :after-read="onChangeAvatar">
+          <template #preview-cover="{file}">
+            <div class="preview-cover van-ellipsis">{{file.name}}</div>
+          </template>
+        </van-uploader>
     	</div>
     	<div class="button_submit" @click="submit_ok">提交申请</div>
     </div>
@@ -39,7 +44,8 @@ export default {
   data() {
     return {
     	img_jia:require('../../assets/images/jia.jpg'),
-    fileList:[],
+      fileLista:[],
+      fileListb:[],
      message:''
     };
   },

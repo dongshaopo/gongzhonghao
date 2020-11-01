@@ -111,14 +111,14 @@ export default {
   data() {
     return {
     	columns: [
-        {text: '某某城市1号',id:1},
-        {text: '某某城市2号',id:2},
-        {text: '某某城市3号',id:3},
-        {text: '某某城市4号',id:4},
-        {text: '某某城市5号',id:5},
-        {text: '某某城市6号',id:6},
-        {text: '某某城市7号',id:7},
-        {text: '某某城市8号',id:8},
+        {text: '君瑞城',id:1},
+        {text: '翠湖天地',id:2},
+        {text: '和家园',id:3},
+        {text: '樱花苑',id:4},
+        {text: '西班牙庄园',id:5},
+        {text: '苹果花园',id:6},
+        {text: '状元府',id:7},
+        {text: '阳光国际',id:8},
       ],
     	attrsColums:[],
     	attrsSelect:-1,
