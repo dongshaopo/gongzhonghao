@@ -373,10 +373,16 @@ iframe {
     font-weight: 400;
     color: #fff;
 }
-.user_info{border-top:15px solid #ededed; width:100%; float:left; background:#fff; padding-bottom:50px;
+.user_info{border-top:15px solid #ededed; width:100%; float:left; background:#fff; padding-bottom:80px;
 .photo{width:100%; float: left; padding-left:30px; box-sizing: border-box;
+.update_a:after{content:'身份证（正）'; font-size:26px;font-family: Source Han Sans CN;position:absolute; left:0px; bottom:-40px; width:100%; text-align:center;}
+.update_b:after{content:'身份证（反）'; font-size:26px;font-family: Source Han Sans CN;position:absolute; left:0px; bottom:-40px; width:100%; text-align:center;}
+.update_c:after{content:'房产证'; font-size:26px;font-family: Source Han Sans CN;position:absolute; left:0px; bottom:-40px; width:100%; text-align:center;}
+ /deep/ .van-uploader__preview{margin:0px !important;}
  .van-uploader{
-    /deep/ .van-uploader__preview-delete{width:30px; height:30px;
+     margin-right:20px;
+     float:left;
+    /deep/ .van-uploader__preview-delete{width:30px; height:30px; margin:0px !important; padding:0px !important;
     i{font-size:30px;}
     }
     /deep/ .van-uploader__upload{background:#fff; border:1px solid #f7f8fa; margin:0px; padding:0px;

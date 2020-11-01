@@ -1,6 +1,10 @@
 <template>
     <section class="sign_a_contract">
+        <div class="ad_img"><img src="~@/assets/images/hetong_a.jpg"></div>
+        <div class="ad_img ad_imgb"><img src="~@/assets/images/hetong_b.jpg"></div>
+        <div class="button_submit" @click="hetong_show_hide('show')">签订</div>
         <div class="signatureBox">
+        	<van-icon name="cross" class="close_hetong" @click="hetong_show_hide('hide')" />
             <div class="canvasBox" ref="canvasHW">
                 <canvas @touchstart='touchStart'
                         @touchmove='touchMove'
@@ -10,19 +14,19 @@
                         @mousemove="mouseMove"
                         @mouseup="mouseUp"></canvas>
             </div>
-        </div>
-<div class="btnBox">
-            <van-button
-                type="default"
-                @click="overwrite"
-                >重写</van-button>
-            <van-button
-                size="small"
-                type="primary"
-                @click="commit"
-                >
-               	 提交签名
-            </van-button>
+           <div class="btnBox">
+	            <van-button
+	                type="default"
+	                @click="overwrite"
+	                >重写</van-button>
+	            <van-button
+	                size="small"
+	                type="primary"
+	                @click="commit"
+	                >
+	               	 提交签名
+	            </van-button>
+	        </div>
         </div>
     </section>
 </template>
@@ -30,8 +34,9 @@
 <script>
 export default {
   name: 'sign_a_contract',
-  head() {
+  data() {
     return {
+    	hetong_show:false,
     	title:'签名',
     }
   },
@@ -61,6 +66,16 @@ export default {
     this.canvasTxt = canvas.getContext('2d')
   },
   methods: {
+  	hetong_show_hide(type){
+  		if(type=='show')
+  		{
+  			$(".signatureBox").css('opacity',1);
+  		}
+  		else
+  		{
+  			$(".signatureBox").css('opacity',0);
+  		}
+  	},
     //添加图片
     handleUpload(data) {
       this.fileUrl.push(data)
@@ -88,7 +103,6 @@ export default {
         this.canvasTxt.closePath()
         this.points.push(obj)
         this.isDown = true
-        debugger
         this.imgUrl =
           (this.$refs.canvasF && this.$refs.canvasF.toDataURL()) || ''
       }
@@ -213,26 +227,30 @@ export default {
 </script>
 <style lang="scss" scoped>
 .sign_a_contract {
-   .signatureBox {
-    position:relative;
-    float:left;
-    margin-top:30px;
+	.ad_img{width:100%; float:left;
+	img{width:100%; height:auto; float:left;}
+	}
+	.ad_imgb{padding-bottom:100px;}
+   .signatureBox{
+   	opacity:0;
+    position:fixed;
+    z-index:100;
+    background:#fff;
+    top:30px;
     width:calc(100% - 60px);
     height:300px;
-    margin-left:30px;
-    float:left;
+    left:30px;
+    .close_hetong{position:absolute; right:10px; top:10px; color:#999; font-size:40px; border:1px solid #999; border-radius:50%; padding:10px;}
     .canvasBox {
 		  width:100%;
 		  height:300px;
 		  float: left;
 		  canvas {
-			  border: 1px solid #e3e3e3;
+			  border-bottom:1px solid #e3e3e3;
 			}
 		}
-  }
-  .btnBox {
-	  width:100%; float:left; text-align:center;
-	  margin-top:20px;
+	.btnBox {
+	  width:100%; float:left; text-align:center; background:#fff; padding:20px 0px;
 	  button:first-of-type {
 		  background: transparent;
 		  border-radius: 40px;
@@ -252,5 +270,6 @@ export default {
 		  border:0px;
 		}
 	}
+  }
 }
 </style>

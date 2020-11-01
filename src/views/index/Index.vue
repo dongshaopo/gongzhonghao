@@ -64,7 +64,7 @@
           <van-swipe-item key="12">
            <ul class="index_kinds">
 		        <li @click="bannerClick('suggestions')">
-		          <img class="bimg" src="~@/assets/images/htqd@2x.png">
+		          <img class="bimg" src="~@/assets/images/tsjy@3x.png">
 		          <font>投诉建议</font>
 		        </li>
 		      </ul>
