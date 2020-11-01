@@ -1,4 +1,13 @@
 const pageMain = [
+	{
+        path: '/bind',
+        name: 'bind',
+        component: () =>
+            import('../views/index/bind.vue'),
+        meta: {
+            title: '地址查询页面'
+        }
+    },
     {
         path: '/serviceInformation',
         name: 'serviceInformation',

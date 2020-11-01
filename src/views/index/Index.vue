@@ -1,6 +1,10 @@
 <!-- 首页 -->
 <template>
   <div class="index-page">
+  	<div style="width:100%; position:fixed; left:0px; top:0px; z-index:100; line-height:60px;">
+  		<span style="width:30%; float: left; text-align: center;" @click="$router.push({name:'bind',query:{type:0}})">用户绑定</span>
+  		<span style="width:30%; float:right; text-align: center;" @click="$router.push({name:'bind',query:{type:1}})">地址绑定</span>
+  	</div>
     <div class="index_top_bj">
     	<img class="bimg" src="~@/assets/images/banner3@2x.png">
 	    <div class="index_server_box">
