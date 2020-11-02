@@ -1,0 +1,88 @@
+<!-- 首页 -->
+<template>
+  <div class="suggestions">
+    <div class="ad_img"><img src="~@/assets/images/banner_tsjy@2x.png"></div>
+    <div class="user_info">
+    	<div class="list">
+    		<p class="zd_name">用户名称</p>
+    		<p class="zd_desc">林**</p>
+    	</div>
+    	<div class="list">
+    		<p class="zd_name">联系方式</p>
+    		<p class="zd_desc">13800001234</p>
+    	</div>
+    	<div class="list">
+    		<p class="zd_name">家庭地址</p>
+    		<p class="zd_desc">苹果花园2-2-122</p>
+    	</div>
+    	<div class="list">
+    		<p class="zd_name">所属公司</p>
+    		<p class="zd_desc">互联网公司</p>
+    	</div>
+    	<div class="list" style="border-bottom:0;">
+    		<p class="zd_name">诉求内容</p>
+    	</div>
+    	<div class="list_text">
+    		<textarea
+			  v-model="message"
+			  type="textarea"
+			  placeholder="请输入您要诉求的内容（不少于15字）"
+			/></textarea>
+    	</div>
+    	<div class="list" style="border-bottom:0;">
+    		<p class="zd_name">上传图片</p>
+    	</div>
+    	<div class="photo">
+          <van-uploader v-model="fileList" :max-count="1" :upload-icon="img_jia" :after-read="onChangeAvatar">
+				  <template #preview-cover="{file}">
+				    <div class="preview-cover van-ellipsis">{{file.name}}</div>
+				  </template>
+				  </van-uploader>
+    	</div>
+    </div>
+    <div class="button_submit" @click="submit_ok">提交申请</div>
+  </div>
+</template>
+<script>
+export default {
+  name: "suggestions",
+  data() {
+    return {
+    	img_jia:require('../../assets/images/jia.jpg'),
+    fileList:[],
+     message:'',
+    };
+  },
+  methods: {
+  	submit_ok(){
+  		let formdata={};
+  		formdata.message=this.message;
+  		if(this.message=='')
+  		{
+  			this.$toast('请输入内容');
+  			return false;
+  		}
+  		this.$http.post('/api/app/aaa', formdata).then(data => {
+        console.log(data.path);
+      })
+  	},
+    onChangeAvatar(e) {
+      console.log(e.content);
+    	return false;
+      this.$http.post('/api/app/public/img',e.content).then(data => {
+        console.log(data.path);
+      })
+    },
+  },
+  created() {
+    
+  }
+};
+</script>
+<style lang="scss" scoped>
+.suggestions{
+ .ad_img{width:100%; float:left;
+ 	img{width:100%; height:auto; float:left;}
+ }
+}
+</style>

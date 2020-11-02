@@ -1,0 +1,19 @@
+https://lanhuapp.com/url/cx1Y2-zLFdc
+蓝湖地址
+https://youzan.github.io/vant/#/zh-CN/rate
+vant官网（本项目基于vue+vant）开发
+
+接口url
+src\build目录下的dev.js，prod.js，test.js分别对应，本地、生产、测试环境
+
+ajax
+this.$http.get("/api/app/coupon",this.params).then(data => {
+        this.dataList = data;
+      });
+
+this.$http.post("/api/app/coupon",this.params).then(data => {
+        this.dataList = data;
+      });
+
+code==200成功
+code==201提示错误信息

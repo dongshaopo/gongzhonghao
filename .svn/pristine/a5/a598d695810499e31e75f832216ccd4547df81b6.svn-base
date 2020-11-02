@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta id="viewport" name="viewport"
+    content="width=device-width,initial-scale=1,user-scalable=no,viewport-fit=cover" />
+  <script src="<%= BASE_URL %>js/jquery.js"></script>
+  <script src="<%= BASE_URL %>js/mml-svg.js"></script>
+  <title></title>
+  <link id="bold" rel="stylesheet" />
+  <script>
+    if (navigator.userAgent.indexOf("Mac OS") > 0 || navigator.userAgent.indexOf("iPhone") > 0 || navigator.userAgent.indexOf("iPad") > 0) {
+      document.getElementById("bold").href = "<%= BASE_URL %>css/mac.css";
+    } else {
+      document.getElementById("bold").href = "<%= BASE_URL %>css/mac-none.css";
+    }
+  </script>
+</head>
+<body>
+  <noscript>
+    <strong>We're sorry but bjy_h5 doesn't work properly without JavaScript
+      enabled. Please enable it to continue.</strong>
+  </noscript>
+  <div id="app"></div>
+  <!-- built files will be auto injected -->
+  <script>
+
+  </script>
+</body>
+
+</html>

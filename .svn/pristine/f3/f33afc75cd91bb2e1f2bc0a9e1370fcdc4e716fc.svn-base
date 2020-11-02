@@ -1,0 +1,11 @@
+.bold {
+    font-weight: 500 !important;
+}
+
+.bold5 {
+    font-weight: 500 !important;
+}
+
+.bold6 {
+    font-weight: 600 !important;
+}

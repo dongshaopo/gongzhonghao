@@ -1,0 +1,12 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [{
+      "appID": "D7SNFQQ796.com.baijiayun.onlineStudentSchool",
+      "paths": ["/app/*", "/qq_conn/101524115/*"]
+    }, {
+      "appID": "D7SNFQQ796.com.baijiayun.onlineDemoSchool",
+      "paths": ["/app/*", "/qq_conn/1108027472/*"]
+    }]
+  }
+}
